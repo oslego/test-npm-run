@@ -1,0 +1,14 @@
+{
+  "name": "test",
+  "version": "0.0.0",
+  "description": "example how to use `npm run`",
+  "private": true,
+  "devDependencies": {
+    "catw": "~0.0.1",
+    "tap": "~0.4.4"
+  },
+  "scripts": {
+    "test": "tap test.js",
+    "build-css": "catw css/*.css > dist/styles.css"
+  }
+}
