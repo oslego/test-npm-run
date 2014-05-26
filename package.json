@@ -5,10 +5,16 @@
   "private": true,
   "devDependencies": {
     "catw": "~0.0.1",
-    "tap": "~0.4.4"
+    "tap": "~0.4.4",
+    "less": "^1.7.0",
+    "watch-run": "^1.0.0"
   },
   "scripts": {
     "test": "tap test.js",
-    "build-css": "catw css/*.css > dist/styles.css"
+    "compile-less": "lessc css/c.less > css/c.css",
+    "concat-css": "catw css/*.css > dist/styles.css",
+    "build-css": "npm run compile-less && npm run concat-css",
+    "watch-css": "watch-run -p 'css/*.less' npm run build-css",
+    "dev": "npm run watch-css"
   }
 }
